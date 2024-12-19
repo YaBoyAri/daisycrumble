@@ -1,0 +1,270 @@
+/* General Styles */
+body {
+    font-family: Orelega, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf4f8;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  .header {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffccda;
+    position: relative;
+  }
+  
+  .logo {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  
+  /* Hidden menu initially (off-screen to the left) */
+  .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Fixed position to stay in place when scrolling */
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%; /* Full height */
+    background-color: #ffccda;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+    transition: left 0.3s ease; /* Smooth sliding animation */
+  }
+  
+  /* Menu links */
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #f7a7c3;
+    color: #fff;
+  }
+  
+  /* Show menu by sliding it into view */
+  .nav-menu.active {
+    left: 0; /* Move into view */
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    z-index: 11;
+  }
+  
+  .close-icon:hover {
+    color: #f7a7c3;
+  }
+  
+  /* Menu Icon Styling */
+  .menu-icon {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays above the menu */
+  }
+  
+  .menu-icon span {
+    cursor : default;
+  }
+  
+  .main-content {
+    padding: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+    
+    .hero {
+      text-align: left;
+      padding: 20px 20px;
+    }
+    
+    .hero h2 {
+      font-family: 'Paytone One', sans-serif;
+      font-size: 80px;
+      letter-spacing: 2px;
+      color: #000;
+      font-weight: lighter;
+      margin-left: 29px;
+      margin-bottom: 5px;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      padding-top: 0px;
+      margin-bottom:0px;
+      margin-left: 30px;
+    }
+    
+    /* Styling untuk galeri */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom dengan ukuran seragam */
+    gap: 15px; /* Jarak antar gambar */
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 10px;
+  }
+  
+  /* Styling untuk item galeri */
+  .gallery-item {
+    aspect-ratio: 1 / 1; /* Membuat setiap item berbentuk persegi */
+    overflow: hidden; /* Memastikan gambar yang lebih besar terpotong */
+    border-radius: 15px; /* Opsional: Sudut membulat */
+    background-color: #f0f0f0; /* Warna latar belakang jika gambar gagal dimuat */
+  }
+  
+  /* Styling untuk gambar di dalam galeri */
+  .gallery-item img {
+    width: 100%; /* Gambar menyesuaikan lebar item */
+    height: 100%; /* Gambar menyesuaikan tinggi item */
+    object-fit: cover; /* Potong gambar untuk memenuhi item */
+    display: block; /* Hilangkan spasi inline */
+    border-radius: 15px; /* Opsional: Sesuaikan dengan item */
+  }
+  
+  /* Responsif untuk layar kecil */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar kecil */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr; /* 1 kolom di layar sangat kecil */
+    }
+  }
+    
+    .app-wrapper{
+      display: flex;
+      align-items: center;
+    }
+  
+    .app {
+      width: 30%;
+      height: auto;
+      margin-right: 20px;
+  
+    }
+    .app-promo {
+      background-color: #FFB9CD;
+      padding: 40px 20px;
+    }
+    
+    .app-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .app-info {
+      flex: 1;
+      margin-right: 30px;
+    }
+    
+    .app-info h3 {
+      font-family: 'Paytone One', sans-serif;
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+    
+    .app-buttons{
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .app-btn {
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+      display: inline-block;
+      margin: 10px 5px 0;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 10px;
+      font-size: 12px;
+      text-decoration: none;
+      color: white;
+      background-color: black;
+      border: none;
+      cursor: pointer;
+    }
+  
+    footer {
+      background-color: #FFB9CD;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    footer .footer-tagline p{
+      font-family: 'Orelega One', cursive;
+      font-size: 60px;
+      letter-spacing: 1px;
+      margin: 5px 0;
+      letter-spacing: 2px;
+    }
+    
+    footer .footer-info p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      margin: 5px 0;
+    }
+    
+  .dm-serif-display-regular {
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+  
+  .paytone-one-regular {
+      font-family: "Paytone One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+  
+  .orelega-one-regular {
+      font-family: "Orelega One", serif;
+      font-weight: 400;
+      font-style: normal;
+  }

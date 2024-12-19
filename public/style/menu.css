@@ -1,0 +1,588 @@
+/* General Styles */
+body {
+    font-family: Orelega, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf4f8;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Membagi ruang antara elemen */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffccda;
+    position: relative;
+}
+
+/* .logo {
+    font-size: 40px;
+    font-weight: 500;
+} */
+
+.logo {
+    font-size: 40px;
+    font-weight: 500;
+    margin: 0 auto; /* Menempatkan logo di tengah */
+    text-align: center;
+}
+
+/* Hidden menu initially (off-screen to the left) */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Fixed position to stay in place when scrolling */
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%; /* Full height */
+    background-color: #ffccda;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+    transition: left 0.3s ease; /* Smooth sliding animation */
+}
+
+/* Menu links */
+.nav-menu li {
+    margin: 10px 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    background-color: #f7a7c3;
+    color: #fff;
+}
+
+/* Show menu by sliding it into view */
+.nav-menu.active {
+    left: 0; /* Move into view */
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.close-icon:hover {
+    color: #f7a7c3;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    position: relative;
+    left: 0;
+    border: none;
+    background: none;
+    font-size: 28px;
+}
+
+.view-cart {
+    position: relative;
+    right: 0;
+}
+
+.view-cart button {
+    background-color: #f7a7c3;
+    color: #ffffff;
+    transition-duration: 0.4s;
+}
+
+.view-cart button:hover {
+    background-color: #fdf4f8;
+    color:#000000;
+}
+
+.menu-icon span {
+    cursor : default;
+}
+
+.shopping-cart {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.shopping-cart img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-top: 17px;
+    padding-right: 20px;
+    top: 15px;
+    right: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+    padding: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content h2 {
+    text-align: left;
+    margin:20px auto;
+    padding-bottom: 100px;
+    width: 80%;
+}
+
+.main-content.shift {
+    transform: translateX(250px); /* Geser konten sesuai lebar menu */
+}
+
+.cookies-menu-btn {
+    background-color: #f7a7c3;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.favorite-flavors-heading {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-right:100px;
+}
+
+/* Cookie Cards */
+@keyframes appear {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.cookie-card {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 50px auto;
+    margin-bottom: 150px;
+    padding: 15px;
+    border-radius: 50px;
+    width: 100%;
+    height: 400px;
+
+}
+
+.cookie-cardright {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 50px auto;
+    margin-bottom: 200px;
+    padding: 15px;
+    border-radius: 50px;
+    width: 100%;
+    height: 400px;
+}
+
+.cookie-card img {
+    max-width: 600px;
+    margin-right: 20px;
+    border-radius: 10px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+
+}
+
+.cookie-cardright img {
+    max-width: 600px;
+    border-radius: 10px;
+    position: absolute;
+    right: 3%;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
+}
+
+.cookie-info h3 {
+    font-family: 'Paytone One',serif;
+    font-weight: bold;
+    font-size: 40px;
+    font-style: normal;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 50px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.cookie-info p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 50px;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+
+}
+
+.cherry-cheese:hover {
+    background-color: rgba(137, 35, 33, 1);
+    color: #fff;
+    margin-bottom: 5px;
+    transition: 1s;
+    margin-bottom: 200px;
+    & .Cart-btn{
+        border: 2px solid #ffffff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+}
+
+.choco-cupcake:hover {
+    background-color: rgba(47, 13, 9, 1);
+    color: #fff;
+    margin-bottom: 200px;
+    transition: 1s;
+    & .Cart-btn{
+        border: 2px solid #ffffff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+.chocolate-chunk:hover {
+    background-color: saddlebrown;
+    color: #fff;
+    transition: 1s;
+    & .Cart-btn{
+        border: 2px solid #ffffff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+.pumpkin-roll:hover {
+    background-color: rgba(212, 125, 22, 1);
+    color: #fff;
+    margin-bottom: 5px;
+    transition: 1s;
+    margin-bottom: 200px;
+    & .Cart-btn{
+        border: 2px solid #ffffff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+}
+
+
+.pink-rainbow:hover {
+    background-color: rgba(246, 194, 183, 1);
+    color: #fff;
+    margin-bottom: 200px;
+    transition: 1s;
+
+    & .Cart-btn{
+        border: 2px solid #fff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #fff;
+        color: #000000;
+    }
+
+}
+
+.pink-rainbow img{
+    transform: scaleX(1);
+}
+
+.lemon-crinkle:hover {
+    background-color: rgba(248, 226, 123, 1);
+    color: #fff;
+    margin-bottom: 5px;
+    transition: 1s;
+    margin-bottom: 200px;
+    & .Cart-btn{
+        border: 2px solid #ffffff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+}
+
+.maple-glaze:hover {
+    background-color: rgba(159, 98, 57, 1);
+    color: #fff;
+    margin-bottom: 200px;
+    transition: 1s;
+
+    & .Cart-btn{
+        border: 2px solid #fff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #fff;
+        color: #000000;
+    }
+
+}
+
+.maple-glaze img{
+    transform: scaleX(1);
+}
+
+.classic-cinnamon:hover {
+    background-color: rgba(242, 211, 182, 1);
+    color: #fff;
+    margin-bottom: 5px;
+    transition: 1s;
+    margin-bottom: 200px;
+    & .Cart-btn{
+        border: 2px solid #ffffff;
+        color: #fff;
+    }
+
+    & .Order-btn{
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+}
+
+
+.action-buttons button{
+    padding: 20px 60px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
+.Cart-btn{
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+.Order-btn{
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+.personal-information {
+    max-width: 600px; /* Membatasi lebar maksimum */
+    margin: 20px auto; /* Centering form */
+    padding: 20px; /* Ruang di dalam form */
+    background-color: #fff; /* Latar belakang putih */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+#guest-form {
+    margin: 40px;
+}
+
+.personal-information h2 {
+    font-family: "Paytone One", sans-serif;
+
+    font-size: 24px; /* Ukuran font untuk judul */
+    margin-bottom: 20px; /* Jarak bawah */
+    text-align: center; /* Centering judul */
+}
+
+.personal-information label {
+    display: block; /* Membuat label menjadi block */
+    margin-bottom: 8px; /* Jarak bawah untuk label */
+    font-weight: bold; /* Membuat teks label lebih tebal */
+}
+
+.personal-information input[type="text"],
+.personal-information input[type="email"],
+.personal-information input[type="tel"] {
+    width: 90%; /* Lebar penuh */
+    padding: 10px; /* Ruang dalam */
+    margin-bottom: 15px; /* Jarak bawah untuk input */
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 4px; /* Sudut membulat */
+    font-size: 16px; /* Ukuran font */
+}
+
+.personal-information input[type="submit"] {
+    background-color: #f7a7c3; /* Warna latar belakang hijau */
+    color: white; /* Warna teks putih */
+    padding: 10px 20px; /* Ruang dalam pada tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 24px; /* Sudut membulat */
+    cursor: pointer; /* Menunjukkan kursor pointer */
+    font-size: 16px; /* Ukuran font */
+    transition: background-color 0.3s ease, transform 0.2s; /* Transisi untuk efek hover */
+}
+
+.personal-information input[type="submit"]:hover {
+    background-color: #fdf4f8; /* Warna latar belakang saat hover */
+    color: #000000;
+    transform: scale(1.05); /* Sedikit membesar saat hover */
+}
+
+.personal-information button {
+    background-color: #28a745; /* Warna latar belakang hijau */
+    color: white; /* Warna teks putih */
+    padding: 10px 20px; /* Ruang dalam pada tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 4px; /* Sudut membulat */
+    cursor: pointer; /* Menunjukkan kursor pointer */
+    font-size: 16px; /* Ukuran font */
+}
+
+.personal-information button:hover {
+    background-color: #218838; /* Warna latar belakang saat hover */
+}
+
+.dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.paytone-one-regular {
+    font-family: "Paytone One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.orelega-one-regular {
+    font-family: "Orelega One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
+/*footer*/
+.footer {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #f7a7c3;
+}
+
+.footercontainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+    background-color: #ffccda;
+}
+
+.socialicons{
+    display: flex;
+    justify-content: center;
+}
+
+.socialicons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #fdf4f8;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialicons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialicons a:hover{
+    background-color:#f7a7c3;
+    transition: 0.5s;
+}
+
+.socialicons a:hover i{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.footerNav{
+    text-align: center;
+    & .orelega-one-regular{
+    font-size: 100px;
+    margin-bottom: 50px;
+   }
+    
+}
+
+.footerBottom{
+    font-family: "Orelega One", serif;
+    text-align: center;
+}

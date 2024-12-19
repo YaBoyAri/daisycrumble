@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More</title>
+    <link rel="stylesheet" href="../style/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orelega+One&family=Paytone+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <button class="menu-icon dm-serif-display-regular" aria-label="Open menu">☰ <span>Menu</span></button>
+            <h1 class="logo orelega-one-regular">daisycrumble</h1>
+            <!-- <button type="button" class="shopping-cart"><img src='/img/1170678.png'></button> -->
+            <ul class="nav-menu">
+                <button class="close-icon" aria-label="Close menu">&times;</button>
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/cart">Shopping Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1>Your Cart</h1>
+        <section id="cart">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Harga</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% let totalPrice = 0; %>
+                    <% cartItems.forEach(item => { %>
+                        <tr>
+                            <td><%= item.name %></td>
+                            <td>Rp<%= item.price %></td>
+                            <td>
+                                <input type="number" value="<%= item.quantity %>" min="1" id="quantity-<%= item.cart_id %>">
+                            </td>
+                            <td>Rp<%= (item.price * item.quantity).toFixed(2) %></td>
+                            <td>
+                                <button onclick="updateQuantity(<%= item.cart_id %>)">Update</button>
+                                <button onclick="removeItem(<%= item.cart_id %>)">Remove</button>
+                        </tr>
+                        <% totalPrice += item.price * item.quantity; %>
+                    <% }); %>
+                </tbody>
+            </table>
+    
+            <div class="cart-total paytone-one-regular">
+                <h3>Total Price: Rp<span id="total-price"><%= totalPrice %></span></h3><br>
+            </div>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </section>
+    </main>
+<script src="/fungsi/menu.js"></script>
+<script src="/fungsi/checkout.js"></script>
+<script src="/fungsi/updateQuantity.js"></script>
+<script src="/fungsi/removeQuantity.js"></script>
+</body>
+</html>

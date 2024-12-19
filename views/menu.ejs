@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Paytone+One&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Menu</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <button class="menu-icon dm-serif-display-regular" aria-label="Open menu">☰ <span>Menu</span></button>
+            <h1 class="logo orelega-one-regular">daisycrumble</h1>
+            <div class="view-cart class paytone-one-regular">
+                <button id="view-cart-button" style="display: none;">View Cart</button>
+            </div>
+            <ul class="nav-menu">
+                <button class="close-icon" aria-label="Close menu">&times;</button>
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/cart">Shop Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <section class="personal-information"><br><br>
+            <h1 class="paytone-one-regular">Please, fill your personal information first<br> before adding some items to cart!</h1><br>
+            <form id="guest-form" action="/submit" method="post">
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="address">Address :</label>
+                <input type="text" id="address" name="address" required><br><br>
+                <label for="email">e-mail : </label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone :</label>
+                <input type="text" id="phone" name="phone" required><br><br>
+                <input type="hidden" id="guest-id" name="guest_id" value="">
+                <input type="submit" value="Submit">
+            </form>
+        </section><br><br>
+
+        <button class="cookies-menu-btn ">Cookies Menu</button><br>
+        
+        <h2 class="favorite-flavors-heading paytone-one-regular">Favorite Flavors</h2>
+
+        <div class="cookie-card chocolate-chunk">
+            <img src="/img/Choco Cookies.svg" alt="Chocolate Chunk Cookie">
+            <div class="cookie-info">
+                <h3>Chocolate Chunk Cookie</h3>
+                <p>Chocolate chip, but make it chunky—a delicious cookie filled with semi-sweet chocolate chunks and a sprinkle of flaky sea salt.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="1">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-cardright cherry-cheese">
+            <img src="/img/Cheese%20Cookies.svg" alt="Cherry Cheese Cookie" class="imgcherry">
+            <div class="cookie-info">
+                <h3>Cherry Cheese Cookie</h3>
+                <p>A classic vanilla cheesecake baked over a buttery graham cracker crust, finished with tart cherry <br>topping and a dollop of whipped cream.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="2">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-card choco-cupcake">
+            <img src="/img/Choco Cupcake.svg" alt="Choco Cupcake Cookie">
+            <div class="cookie-info">
+                <h3>Choco Cupcake Cookie</h3>
+                <p>A warm vanilla sugar cookie topped with luscious fudge frosting and chocolate sprinkles.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="3">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-cardright pumpkin-roll">
+            <img src="/img/pumpkin roll cookie.svg" alt="Cherry Cheese Cookie" >
+            <div class="cookie-info">
+                <h3>Pumpkin Roll Cookie</h3>
+                <p>A pumpkin cookie blended with autumn spices and topped with a spiral vanilla <br>cream cheese frosting.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="4">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-card pink-rainbow">
+            <img src="/img/pink rainbow cookie.svg" alt="Choco Cupcake Cookie">
+            <div class="cookie-info">
+                <h3>Pink Rainbow Cookie</h3>
+                <p>AA soft vanilla cookie crowned with a luscious pink glaze and rainbow sprinkles, finished with a classic doughnut-style hole.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="5">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-cardright lemon-crinkle">
+            <img src="/img/Lemon Crinkle.svg" alt="Cherry Cheese Cookie" >
+            <div class="cookie-info">
+                <h3>Lemon Crinkle Cookie</h3>
+                <p>A warm cake-y lemon cookie rolled in crunchy sugar crystals and sprinkled with <br>fluffy powdered sugar.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="6">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-card maple-glaze">
+            <img src="/img/maple glaze cookie.svg" alt="Choco Cupcake Cookie">
+            <div class="cookie-info">
+                <h3>Maple Glaze Cookie</h3>
+                <p>A cookie bursting with brown sugar flavor and drizzled with a tasty maple glaze.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="7">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-cardright classic-cinnamon">
+            <img src="/img/classic cinnamon cookie.svg" alt="Cherry Cheese Cookie" >
+            <div class="cookie-info">
+                <h3>Classic Cinnamon Cookie</h3>
+                <p>A classic vanilla sugar cookie rolled in a sparkly sweet cinnamon sugar coating.</p>
+                <div class="action-buttons">
+                    <button class="Cart-btn" data-item-id="8">Add to Cart</button>
+                    <button class="Order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="socialicons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+        
+        <div class="footercontainer">
+            <div class="footerNav">
+                <h1 class="logo orelega-one-regular">daisycrumble</h1>
+            </div>
+                
+            <div class="footerBottom">
+                <p>Copyright &copy;2024 All Right Reserved. <br>
+                    Privacy Policy | Terms and Condition | More Informations </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/fungsi/menu.js"></script>
+    <script src="/fungsi/buttonaddCart.js"></script>
+    <script src="/fungsi/guestCart.js"></script>
+</body>
+</html>
